@@ -165,10 +165,73 @@ nav a:hover {
 }
 @media (max-width: 1200px) {
   #listingCards { grid-template-columns: repeat(2, 1fr); }
-  .stage-grid { grid-template-columns: repeat(2, 1fr); }
+  .stage-grid { grid-template-columns: repeat(3, 1fr); }
+  .area-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 800px) {
-  #listingCards, .stage-grid { grid-template-columns: 1fr; }
+  #listingCards { grid-template-columns: repeat(2, 1fr); }
+  .stage-grid { grid-template-columns: repeat(2, 1fr); }
+  .area-grid { grid-template-columns: repeat(2, 1fr); }
+  .feature-row { 
+    flex-direction: column !important; 
+    gap: 16px !important; 
+    text-align: center;
+  }
+  .feature-title { justify-content: center !important; }
+  header { 
+    flex-direction: column; 
+    gap: 16px; 
+    padding: 16px;
+  }
+  nav { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 16px;
+  }
+  nav a { margin-left: 0; }
+}
+@media (max-width: 600px) {
+  #listingCards { grid-template-columns: 1fr; }
+  .stage-grid { grid-template-columns: repeat(2, 1fr); }
+  .area-grid { grid-template-columns: 1fr; }
+  .listing-card { 
+    width: 100% !important; 
+    max-width: 100% !important; 
+    margin: 0 auto;
+  }
+  .hero-main { 
+    padding: 24px 16px !important; 
+    min-height: 200px !important;
+  }
+  .hero-message { 
+    font-size: 1.2em !important; 
+    line-height: 1.3 !important;
+  }
+  .hero-main h1 { 
+    font-size: 1.1em !important; 
+    margin-bottom: 16px !important;
+  }
+  .search-bar { 
+    flex-direction: column; 
+    gap: 12px; 
+    align-items: center;
+  }
+  .search-bar input { 
+    width: 100% !important; 
+    max-width: 300px;
+  }
+  .logo { 
+    font-size: 1.8em !important; 
+    min-width: auto !important;
+  }
+}
+@media (max-width: 400px) {
+  .stage-grid { grid-template-columns: 1fr; }
+  .hero-message { font-size: 1em !important; }
+  .hero-main h1 { font-size: 1em !important; }
+  .logo { font-size: 1.5em !important; }
+  nav { flex-direction: column; gap: 8px; }
 }
 .listing-card {
   background: #fff;
