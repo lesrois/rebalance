@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>인천 부평구 재개발 상세정보</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .property-detail-container { max-width: 700px; margin: 40px auto; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); padding: 32px 24px; }
+    .property-title { font-size: 2em; font-weight: bold; margin-bottom: 12px; }
+    .property-info-list { list-style: none; padding: 0; margin: 0 0 24px 0; }
+    .property-info-list li { font-size: 1.15em; margin-bottom: 10px; display: flex; justify-content: space-between; border-bottom: 1px solid #f0f0f0; padding-bottom: 6px; }
+    .property-label { color: #4e73df; font-weight: 500; }
+    .property-value { color: #222; font-weight: 600; }
+    .property-risk { color: #e74c3c; font-weight: bold; }
+    .back-link { display: inline-block; margin-top: 24px; color: #4e73df; text-decoration: underline; font-size: 1em; }
+    .alarm-btn { display:none; }
+    .alarm-square-btn {
+      background: #4e73df;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 22px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 16px;
+      transition: background 0.2s;
+    }
+    .alarm-square-btn:hover {
+      background: #1c3fa0;
+    }
+  </style>
+</head>
+<body>
+  <div class="property-detail-container">
+    <div class="property-header-row" style="justify-content:space-between;">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div>
+          <div class="property-title">인천 부평구 재개발</div>
+          <div class="property-stage" style="text-align:left;">사업시행인가</div>
+        </div>
+      </div>
+      <button class="alarm-square-btn" onclick="alert('알람이 설정되었습니다!')">알림받기</button>
+    </div>
+    <div class="property-summary">
+      <div class="summary-item"><strong>매매가</strong><br>5.0억</div>
+      <div class="summary-item"><strong>프리미엄</strong><br>1.4억</div>
+      <div class="summary-item"><strong>예상 수익률</strong><br>20%</div>
+      <div class="summary-item"><strong>감정가</strong><br>3.6억</div>
+      <div class="summary-item"><strong>초기투자금</strong><br>1.2억</div>
+    </div>
+    <div><span class="property-label">구역명</span>: <span class="property-value">인천 부평구 재개발</span></div>
+    <a href="index.html" class="back-link">← 매물 목록으로 돌아가기</a>
+  </div>
+</body>
+</html> 

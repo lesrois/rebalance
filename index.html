@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Re:Balance</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <div class="logo" style="min-width:160px; font-family: 'SUIT', 'Pretendard', 'Noto Sans KR', 'Apple SD Gothic Neo', Arial, sans-serif; font-size:2.5em; font-weight:300; letter-spacing:-2px; display:flex; align-items:center;">
+      <span class="logo-re">Re:</span><span class="logo-balance">Balance</span>
+    </div>
+    <nav>
+      <a href="#listings">매물목록</a>
+      <a href="#guide">투자정보</a>
+      <a href="#contact">문의하기</a>
+      <a href="#mypage">마이페이지</a>
+    </nav>
+  </header>
+
+  <section class="hero-main">
+    <div class="hero-message">
+      도심 리빌딩의 흐름을 데이터로 읽다.<br/>
+      감정가부터 프리미엄까지, 정비사업의 핵심을 한눈에.
+    </div>
+    <h1>재건축·재개발 투자, 한눈에 비교하고 시작하세요!</h1>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="지역, 매물명 등으로 검색"/>
+      <button onclick="searchListings()">검색</button>
+    </div>
+  </section>
+
+  <section class="section" id="section">
+    <div class="feature-row" style="display:flex; flex-direction:row; justify-content:space-between; align-items:center; gap:40px; max-width:1200px; margin:0 auto 24px auto;">
+      <div class="feature-title" style="padding:0 18px;"><a class="feature-label" href="#listings">추천 매물</a></div>
+      <div class="feature-title" style="padding:0 18px;"><a class="feature-label" href="#by-area">구역별 매물</a></div>
+      <div class="feature-title" style="padding:0 18px;"><a class="feature-label" href="#by-stage">진행단계별 매물</a></div>
+      <div class="feature-title" style="padding:0 18px;"><a class="feature-label" href="#map-section">매물 지도</a></div>
+      <div class="feature-title" style="padding:0 18px;"><a class="feature-label" href="#community">커뮤니티</a></div>
+    </div>
+  </section>
+
+  <section id="listings" class="listings">
+    <h2>추천 매물</h2>
+    <div id="listingCards" class="listing-cards">
+      <!-- JS로 매물 카드가 들어갑니다 -->
+    </div>
+  </section>
+  <section id="by-area" class="listings">
+    <h2>구역별 매물</h2>
+    <div class="listing-cards area-grid">
+      <div class="listing-card area-card area-bg area-bg-gangnam"><div><div class="area-title">서울시 강남구</div><div class="area-desc">대표 부촌, 다양한 재건축·재개발 매물</div></div></div>
+      <div class="listing-card area-card area-bg area-bg-nowon"><div><div class="area-title">서울시 노원구</div><div class="area-desc">합리적 가격대, 실수요와 투자 모두 인기</div></div></div>
+      <div class="listing-card area-card area-bg area-bg-haeundae"><div><div class="area-title">부산 해운대구</div><div class="area-desc">해안가 입지, 프리미엄 신축 및 재건축</div></div></div>
+      <div class="listing-card area-card area-bg area-bg-eunpyeong"><div><div class="area-title">서울시 은평구</div><div class="area-desc">자연과 도심의 조화, 신흥 투자처</div></div></div>
+      <div class="listing-card area-card area-bg area-bg-seocho"><div><div class="area-title">서울시 서초구</div><div class="area-desc">고급 재건축 매물 집중, 강남권 핵심</div></div></div>
+      <div class="listing-card area-card area-bg area-bg-ydp"><div><div class="area-title">서울시 영등포구</div><div class="area-desc">업무지구와 주거지의 조화, 미래가치 기대</div></div></div>
+      <div class="listing-card area-card area-bg area-bg-dongjak"><div><div class="area-title">서울시 동작구</div><div class="area-desc">교통과 생활 인프라 우수, 실거주 선호</div></div></div>
+      <div class="listing-card area-card area-bg area-bg-songpa"><div><div class="area-title">서울시 송파구</div><div class="area-desc">신축 아파트와 재건축 활발</div></div></div>
+    </div>
+  </section>
+  <section id="by-stage" class="listings">
+    <h2>진행단계별 매물</h2>
+    <div class="listing-cards stage-grid">
+      <div class="listing-card stage-card"><span class="stage-icon">🗺️</span><div><div class="stage-title"><span class="stage-num">1.</span> 기본계획수립</div><div class="stage-desc-sm">시청에서 이 동네를 어떻게 고칠지 큰 그림을 세워요.</div></div></div>
+      <div class="listing-card stage-card"><span class="stage-icon">🏚️</span><div><div class="stage-title"><span class="stage-num">2.</span> 안전진단</div><div class="stage-desc-sm">아파트가 많이 낡았는지 검사해서, 재건축이 필요한지 확인해요.</div></div></div>
+      <div class="listing-card stage-card"><span class="stage-icon">📍</span><div><div class="stage-title"><span class="stage-num">3.</span> 정비구역 지정</div><div class="stage-desc-sm">‘여기는 재건축 구역이에요!’라며 공식적으로 구역을 정해요.</div></div></div>
+      <div class="listing-card stage-card"><span class="stage-icon">👥</span><div><div class="stage-title"><span class="stage-num">4.</span> 추진위원회 승인</div><div class="stage-desc-sm">조그마한 주민 대표팀(추진위)을 뽑고, 그걸 승인받아요.</div></div></div>
+      <div class="listing-card stage-card"><span class="stage-icon">📝</span><div><div class="stage-title"><span class="stage-num">5.</span> 조합 설립 인가</div><div class="stage-desc-sm">‘우리 조합 만들어요!’하고 시청에서 허가를 받아요.</div></div></div>
+      <div class="listing-card stage-card"><span class="stage-icon">📑</span><div><div class="stage-title"><span class="stage-num">6.</span> 사업시행 인가</div><div class="stage-desc-sm">새 아파트 계획서를 시청에 내고 ‘이렇게 할게요!’ 허가받아요.</div></div></div>
+      <div class="listing-card stage-card"><span class="stage-icon">💰</span><div><div class="stage-title"><span class="stage-num">7.</span> 관리처분 인가</div><div class="stage-desc-sm">누가 어느 집에 들어가고, 얼마 낼지 정해요.</div></div></div>
+      <div class="listing-card stage-card"><span class="stage-icon">🏗️</span><div><div class="stage-title"><span class="stage-num">8.</span> 철거 신고</div><div class="stage-desc-sm">이제 낡은 아파트를 부수려면 신고부터 해요.</div></div></div>
+      <div class="listing-card stage-card"><span class="stage-icon">🚧</span><div><div class="stage-title"><span class="stage-num">9.</span> 착공 신고</div><div class="stage-desc-sm">본격적으로 공사를 시작하겠다고 신고해요.</div></div></div>
+      <div class="listing-card stage-card"><span class="stage-icon">🏢</span><div><div class="stage-title"><span class="stage-num">10.</span> 일반분양 승인</div><div class="stage-desc-sm">새 아파트 분양을 허가받고, 알림장을 뿌려요.</div></div></div>
+    </div>
+  </section>
+  <section id="community" class="listings">
+    <h2>커뮤니티</h2>
+    <div class="listing-cards">
+      <div class="listing-card comm-card"><span class="comm-icon">💬</span><div><div class="comm-title">실시간 Q&A</div><div class="comm-desc">전문가와 회원들의 질문/답변, 실시간 소통</div></div></div>
+      <div class="listing-card comm-card"><span class="comm-icon">⭐</span><div><div class="comm-title">투자후기</div><div class="comm-desc">성공/실패 사례, 노하우 공유, 생생한 경험담</div></div></div>
+      <div class="listing-card comm-card"><span class="comm-icon">📰</span><div><div class="comm-title">뉴스/이슈</div><div class="comm-desc">최신 재건축·재개발 소식, 트렌드, 정책 변화</div></div></div>
+    </div>
+  </section>
+
+  <section id="map-section" class="map-section">
+    <h2>매물 지도</h2>
+    <div class="map-filter">
+      <label for="stageFilter">사업단계:</label>
+      <select id="stageFilter" onchange="filterMarkers()">
+        <option value="all">전체</option>
+        <option value="조합설립">조합설립</option>
+        <option value="사업시행인가">사업시행인가</option>
+        <option value="관리처분인가">관리처분인가</option>
+        <option value="착공">착공</option>
+        <option value="준공">준공</option>
+      </select>
+    </div>
+    <div id="map" style="height:400px; width:100%; margin: 24px 0; border-radius: 12px; overflow: hidden;"></div>
+  </section>
+
+  <section id="guide" class="guide">
+    <h2>재건축·재개발 투자 가이드</h2>
+    <ul>
+      <li data-icon="🛤️">투자 절차: 매물 확인 → 상담 → 계약 → 투자 진행</li>
+      <li data-icon="⚠️">유의사항: 관련 법규, 투자 위험성, 자금 계획 등</li>
+      <li data-icon="💡">FAQ: 자주 묻는 질문</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>문의하기</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="이름" required/>
+      <input type="email" placeholder="이메일" required/>
+      <textarea placeholder="문의 내용" required></textarea>
+      <button type="submit">문의 보내기</button>
+    </form>
+    <div id="contactMsg"></div>
+  </section>
+
+  <footer>
+    <div>© 2024 재건축·재개발 플랫폼</div>
+    <div>
+      <a href="#">이용약관</a> | 
+      <a href="#">개인정보처리방침</a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+</html> 

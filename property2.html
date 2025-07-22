@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>이문1구역 상세정보</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    body { background: #f7f7f7; }
+    .property-hero-img {
+      width: 100%;
+      max-height: 340px;
+      object-fit: cover;
+      border-radius: 0 0 18px 18px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+    .property-main-container {
+      max-width: 900px;
+      margin: -60px auto 40px auto;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+      padding: 32px 32px 24px 32px;
+      position: relative;
+      z-index: 2;
+    }
+    .property-header-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+    }
+    .property-title {
+      font-size: 2.1em;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .property-stage {
+      font-size: 1.1em;
+      color: #4e73df;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .property-summary {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .summary-item {
+      background: #f5f7fa;
+      border-radius: 8px;
+      padding: 12px 18px;
+      font-size: 1.08em;
+      min-width: 120px;
+      text-align: center;
+      color: #222;
+      font-weight: 500;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+    .summary-item strong { color: #4e73df; font-weight: bold; }
+    .property-info-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin: 32px 0 24px 0;
+    }
+    .info-card {
+      flex: 1 1 220px;
+      background: #f8f9fa;
+      border-radius: 12px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+      padding: 20px 18px 16px 18px;
+      min-width: 200px;
+    }
+    .info-label { color: #888; font-size: 1em; margin-bottom: 6px; display: block; }
+    .info-value { font-size: 1.25em; font-weight: bold; color: #222; }
+    .info-risk { color: #e74c3c; font-weight: bold; }
+    .section-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 32px 0 12px 0;
+      color: #222;
+    }
+    .market-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      margin-bottom: 18px;
+    }
+    .market-table th, .market-table td {
+      border: 1px solid #e0e0e0;
+      padding: 10px 8px;
+      text-align: center;
+    }
+    .market-table th { background: #f5f7fa; color: #4e73df; }
+    .news-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .news-list li {
+      margin-bottom: 10px;
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 1em;
+    }
+    .alarm-btn {
+      display: inline-block;
+      background: #4e73df;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 32px;
+      font-size: 1.1em;
+      margin: 24px 0 0 0;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .alarm-btn:hover { background: #1c3fa0; }
+    .alarm-icon-btn {
+      background:#4e73df; border:none; border-radius:50%; width:44px; height:44px; display:flex; align-items:center; justify-content:center; cursor:pointer; margin-left:8px;
+    }
+    .alarm-square-btn {
+      background: #4e73df;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 22px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      margin-left: 16px;
+      transition: background 0.2s;
+    }
+    .alarm-square-btn:hover {
+      background: #1c3fa0;
+    }
+    .return-btn {
+      display: block;
+      width: fit-content;
+      margin: 36px auto 0 auto;
+      background: #4e73df;
+      color: #fff !important;
+      border-radius: 8px;
+      padding: 12px 28px;
+      font-size: 1em;
+      font-weight: 600;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(78,115,223,0.08);
+      transition: background 0.2s;
+    }
+    .return-btn:hover {
+      background: #1c3fa0;
+      color: #fff !important;
+    }
+    @media (max-width: 900px) {
+      .property-main-container { padding: 18px 4vw; }
+      .property-header-row { flex-direction: column; align-items: flex-start; }
+      .property-info-cards { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <img class="property-hero-img" src="https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?auto=format&fit=crop&w=900&q=80" alt="이문1구역 대표이미지" />
+  <div class="property-main-container">
+    <div class="property-header-row" style="justify-content:space-between;">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <div>
+          <div class="property-title">이문1구역</div>
+          <div class="property-stage" style="text-align:left;">조합설립</div>
+        </div>
+      </div>
+      <button class="alarm-square-btn" onclick="alert('알람이 설정되었습니다!')">알림받기</button>
+    </div>
+    <div class="property-summary">
+      <div class="summary-item"><strong>매매가</strong><br>5.3억</div>
+      <div class="summary-item"><strong>프리미엄</strong><br>1.5억</div>
+      <div class="summary-item"><strong>예상 수익률</strong><br>미정</div>
+      <div class="summary-item"><strong>감정가</strong><br>3.8억</div>
+      <div class="summary-item"><strong>초기투자금</strong><br>1.7억</div>
+    </div>
+    <div class="property-info-cards">
+      <div class="info-card">
+        <span class="info-label">분담금</span>
+        <span class="info-value">미정</span>
+      </div>
+      <div class="info-card">
+        <span class="info-label">리스크</span>
+        <span class="info-value">없음</span>
+      </div>
+      <div class="info-card">
+        <span class="info-label">구역명</span>
+        <span class="info-value">이문1구역</span>
+      </div>
+    </div>
+    <div class="section-title">주변 시세(평균)</div>
+    <table class="market-table">
+      <tr><th>구분</th><th>평균 시세</th></tr>
+      <tr><td>전용 59㎡</td><td>7.5억</td></tr>
+      <tr><td>전용 84㎡</td><td>9.2억</td></tr>
+    </table>
+    <div class="section-title">인근 신축 시세 비교</div>
+    <table class="market-table">
+      <tr><th>구분</th><th>신축 시세</th></tr>
+      <tr><td>전용 59㎡</td><td>8.2억</td></tr>
+      <tr><td>전용 84㎡</td><td>10.1억</td></tr>
+    </table>
+    <div class="section-title">최근 뉴스/블로그 요약</div>
+    <ul class="news-list">
+      <li>2024.06.02 - 이문1구역, 조합설립 인가 완료</li>
+      <li>2024.05.18 - 동대문구 재개발, 분양가 전망</li>
+      <li>2024.05.05 - 이문동 일대 신축 아파트 시세 동향</li>
+    </ul>
+    <a href="index.html" class="back-link return-btn"><span style="font-size:1.2em; vertical-align:middle;">←</span> 매물 목록으로 돌아가기</a>
+  </div>
+</body>
+</html> 
